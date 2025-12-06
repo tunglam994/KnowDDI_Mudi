@@ -120,7 +120,7 @@ def _bfs_relational(adj, roots, max_nodes_per_hop=None):
         next_lvl -= visited  # set difference
 
         if max_nodes_per_hop and max_nodes_per_hop < len(next_lvl):
-            next_lvl = set(random.sample(next_lvl, max_nodes_per_hop))
+            next_lvl = set(random.sample(list(next_lvl), max_nodes_per_hop))
 
         yield next_lvl
 
